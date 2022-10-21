@@ -20,7 +20,7 @@ public class DvdLibraryController {
         this.dao=dao;
     }
 
-    public void run() throws IOException {
+    public void run()  {
         boolean endSwitch = true;
         int menuSelection = 0;
         try {
@@ -61,7 +61,7 @@ public class DvdLibraryController {
     }
 
     //creates a new DvD object by getting dvd info from user and adds the new dvd to dvdFile.txt
-    private void createDvd() throws DvdLibraryDaoException, IOException {
+    private void createDvd() throws DvdLibraryDaoException {
         view.displayCreateDvDBanner();
         DvD newDvD=view.getNewDvDInfo();
         dao.addDvd(newDvD.getTitle(), newDvD);
@@ -88,7 +88,7 @@ public class DvdLibraryController {
     }
 
     //takes title input from user and removes corresponding dvd object from dvdFile.txt
-    private void removeDvd() throws DvdLibraryDaoException, IOException {
+    private void removeDvd() throws DvdLibraryDaoException {
         view.displayRemoveDvdBanner();
         String dvdTitle= view.getDvdTitleChoice();
         DvD removedDvD=dao.removeDvd(dvdTitle);
@@ -101,7 +101,7 @@ public class DvdLibraryController {
 
     //takes title input from user, displays edit menu options, takes in edit choice from user, and updates the
     //corresponding info for the chosen title
-    private void editDvd() throws DvdLibraryDaoException, IOException {
+    private void editDvd() throws DvdLibraryDaoException {
         view.displayEditDvdBanner();
         String title = view.getDvdTitleChoice();
         DvD currentDVD = dao.getDvd(title);
@@ -149,7 +149,7 @@ public class DvdLibraryController {
     }
 
     //takes in title input from the user and edits the release date of the dvd object that corresponds with the title
-    private void editReleaseDate(String title) throws DvdLibraryDaoException, IOException {
+    private void editReleaseDate(String title) throws DvdLibraryDaoException {
         view.displayEditReleaseDateBanner();
         String newReleaseDate = view.getNewReleaseDate();
         dao.editReleaseDate(title, newReleaseDate);
@@ -157,7 +157,7 @@ public class DvdLibraryController {
     }
 
     //takes in title input from the user and edits the MPAA rating of the dvd object that corresponds with the title
-    private void editMPAA(String title) throws DvdLibraryDaoException, IOException {
+    private void editMPAA(String title) throws DvdLibraryDaoException {
         view.displayEditMpaaBanner();
         String newMPAA = view.getNewMpaaRating();
         dao.editMPAA(title, newMPAA);
@@ -165,7 +165,7 @@ public class DvdLibraryController {
     }
 
     //takes in title input from the user and edits the director's name of the dvd object that corresponds with the title
-    private void editDirectorName(String title) throws DvdLibraryDaoException, IOException {
+    private void editDirectorName(String title) throws DvdLibraryDaoException {
         view.displayEditDirectorNameBanner();
         String newDirector = view.getNewDirectorName();
         dao.editDirectorName(title, newDirector);
@@ -173,7 +173,7 @@ public class DvdLibraryController {
     }
 
     //takes in title input from the user and edits the studio name of the dvd object that corresponds with the title
-    private void editStudioName(String title) throws DvdLibraryDaoException, IOException {
+    private void editStudioName(String title) throws DvdLibraryDaoException {
         view.displayEditStudio();
         String newStudio = view.getNewStudio();
         dao.editStudio(title, newStudio);
@@ -181,7 +181,7 @@ public class DvdLibraryController {
     }
 
     //takes in title input from the use and edits the user rating of the dvd object that corresponds with the title
-    private void editUserRating(String title) throws DvdLibraryDaoException, IOException {
+    private void editUserRating(String title) throws DvdLibraryDaoException {
         view.displayEditUserRating();
         String newRating = view.getNewUserRating();
         dao.editUserRating(title, newRating);

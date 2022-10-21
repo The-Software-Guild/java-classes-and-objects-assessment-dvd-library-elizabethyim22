@@ -19,7 +19,7 @@ public interface dvdLibraryDao {
      * @return the previous dvd object associated with title, otherwise, returns null
      *
      * */
-    DvD addDvd(String title, DvD dvd) throws DvdLibraryDaoException, IOException;
+    DvD addDvd(String title, DvD dvd) throws DvdLibraryDaoException;
 
     /**
      *
@@ -51,7 +51,7 @@ public interface dvdLibraryDao {
      * @return dvd object being removed or null if does not exist
      *
      * */
-    DvD removeDvd(String title) throws DvdLibraryDaoException, IOException;
+    DvD removeDvd(String title) throws DvdLibraryDaoException;
 
     /**
      *
@@ -62,7 +62,7 @@ public interface dvdLibraryDao {
      * @return dvd object being edited or null if does not exist
      *
      * */
-    DvD editReleaseDate(String title, String newReleaseDate) throws DvdLibraryDaoException, IOException;
+    DvD editReleaseDate(String title, String newReleaseDate) throws DvdLibraryDaoException;
 
     /**
      *
@@ -73,7 +73,7 @@ public interface dvdLibraryDao {
      * @return dvd object being edited or null if does not exist
      *
      * */
-    DvD editMPAA(String title, String newMpaaRating) throws DvdLibraryDaoException, IOException;
+    DvD editMPAA(String title, String newMpaaRating) throws DvdLibraryDaoException;
 
     /**
      *
@@ -84,7 +84,7 @@ public interface dvdLibraryDao {
      * @return dvd object being edited or null if does not exist
      *
      * */
-    DvD editDirectorName(String title, String newDirectorName) throws DvdLibraryDaoException, IOException;
+    DvD editDirectorName(String title, String newDirectorName) throws DvdLibraryDaoException;
 
     /**
      *
@@ -95,7 +95,7 @@ public interface dvdLibraryDao {
      * @return dvd object being edited or null if does not exist
      *
      * */
-    DvD editStudio(String title, String newStudioName) throws DvdLibraryDaoException, IOException;
+    DvD editStudio(String title, String newStudioName) throws DvdLibraryDaoException;
 
     /**
      *
@@ -106,6 +106,6 @@ public interface dvdLibraryDao {
      * @return dvd object being edited or null if does not exist
      *
      * */
-    DvD editUserRating(String title, String newUserRating) throws DvdLibraryDaoException, IOException;
+    DvD editUserRating(String title, String newUserRating) throws DvdLibraryDaoException;
 
 }

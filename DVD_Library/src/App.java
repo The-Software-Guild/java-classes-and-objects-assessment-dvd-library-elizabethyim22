@@ -5,14 +5,14 @@ import com.sal.dvdlibrary.dao.dvdLibraryDao;
 import com.sal.dvdlibrary.ui.DvdLibraryView;
 import com.sal.dvdlibrary.ui.UserIO;
 import com.sal.dvdlibrary.ui.UserIOConsoleImpl;
-import java.io.IOException;
+
 /**
 *
 * @author Elizabeth Yim
 *
 * */
 public class App {
-    public static void main(String[] args) throws DvdLibraryDaoException, IOException {
+    public static void main(String[] args) throws DvdLibraryDaoException {
         UserIO myIo =  new UserIOConsoleImpl();
         DvdLibraryView myView = new DvdLibraryView(myIo);
         dvdLibraryDao myDao = new DvdLibraryDaoFileImpl();
